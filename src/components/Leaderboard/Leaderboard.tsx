@@ -78,7 +78,7 @@ const Leaderboard = (props: LeaderboardProps) => {
                      <Badge color={getBadgeColor(findRank(props.items.sort((a,b) => b[props.scoringMetric] - a[props.scoringMetric]), item))}>{findRank(props.items.sort((a,b) => b[props.scoringMetric] - a[props.scoringMetric]), item) }</Badge>
                     </TableCell>
                     <TableCell>
-                        <Text color={props.theme || 'purple'}>{item[props.id]}</Text>
+                        <Text color={props.theme || 'purple'}><a href={"/" + item[props.id]}>{item[props.id]}</a></Text>
                     </TableCell>
                     {props.cell1 && (<TableCell>
                           <Text color={props.theme || 'purple'}>{item[props.cell1]}</Text>
@@ -99,7 +99,7 @@ const Leaderboard = (props: LeaderboardProps) => {
             ))}
         </TableBody>
     </Table>
-     <p className="text-center text-gray-500 text-xs">powered by <a className="underline" href="https://www.myflywheel.app/" target='none'>flywheel</a></p>
+     
      </Card>
         </>
     )
